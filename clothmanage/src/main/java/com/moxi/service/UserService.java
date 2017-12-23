@@ -20,5 +20,6 @@ public interface UserService {
     void insertList(List<User> userList) throws SQLException;
     List<User> getuserlist(int startat , int limit) ;
     int countTotal() ;
+    String exportCurrenPage2xls(int startat , int limit);
     
 }

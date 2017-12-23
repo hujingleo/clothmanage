@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +21,8 @@ import com.moxi.utils.SimpleListObject;
 public class TestadminController {
     @Autowired
     private UserService userService;
-    
+	@Value("${export.weblocation}")
+	private String exportWebRoot;
 	@RequestMapping("index")
 	public ModelAndView page1() {
 		return new ModelAndView("/index.html");
@@ -80,4 +84,26 @@ public class TestadminController {
         	slo.setTotal(total);
         return slo;
     }
+    /**
+	 * 导出当前页的所有查询记录
+	 * 
+	 * @param query
+	 * @return
+	 */
+	@RequestMapping(value = "/grouponExportCurrentQuery", produces = "text/plain")
+	public String exportcurrentquery(int page , int limit) {
+    	if (limit==0) {
+			limit=10;
+		}
+    	if (page==0) {
+    		page=1;
+		}
+    	int startat = 0;
+    	if (page>1) {
+    		startat = (page-1)*limit;
+		}
+    	List<User> userlist = userService.getuserlist(startat, limit);
+		String filename = this.userService.exportCurrenPage2xls(startat, limit);
+		return this.exportWebRoot + filename;
+	}
 }
