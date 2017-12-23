@@ -1,4 +1,4 @@
-package com.moxi.entity;
+package com.moxi.utils;
 
 import java.util.Date;
 
@@ -84,15 +84,15 @@ public class SimpleNetObject {
 		this.message=message;
 	}
 	
-	public static void main(String[] args){
-		long start=System.currentTimeMillis();
-		for(int i=0;i<1000000;i++){
-			SimpleNetObject sno=new SimpleNetObject();
-			
-		}
-		long end=System.currentTimeMillis();
-		System.out.println("耗时"+(end-start));
-		
-	}
+//	public static void main(String[] args){
+//		long start=System.currentTimeMillis();
+//		for(int i=0;i<1000000;i++){
+//			SimpleNetObject sno=new SimpleNetObject();
+//			
+//		}
+//		long end=System.currentTimeMillis();
+//		System.out.println("耗时"+(end-start));
+//		
+//	}
 	
 }

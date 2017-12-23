@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.moxi.entity.SimpleListObject;
-import com.moxi.entity.SimpleNetObject;
 import com.moxi.entity.Student;
+import com.moxi.utils.SimpleListObject;
+import com.moxi.utils.SimpleNetObject;
 
 @RestController
 @RequestMapping("/admin/factory")

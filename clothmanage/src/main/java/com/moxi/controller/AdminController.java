@@ -1,29 +1,54 @@
 package com.moxi.controller;
 
-import java.util.HashMap;
-import java.util.Map;
 
+import java.sql.SQLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.moxi.model.Admin;
+import com.moxi.model.User;
+import com.moxi.service.UserService;
+
 
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
+    
+	
+    @Autowired
+    private UserService userService;
 
-	@RequestMapping("index")
-	public ModelAndView page1() {
-		return new ModelAndView("/index.html");
-	}
+    @RequestMapping("/test")
+    public User getUser(){
+        User user =null;
+        try {
+            user = userService.findById(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+    @RequestMapping("/testinsert")
+    public User testinsert(){
+        User user =null;
+        try {
+            user = userService.findById(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
 
-	@RequestMapping("map")
-	public Map<String, String> map1() {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("name", "老张");
-		map.put("age", "24");
-		map.put("sex", "男");
-		map.put("feature", "青春痘很多");
-		map.put("dream", "没梦想啊");
-		return map;
-	}
+//  @Autowired
+//  private AdminService service;
+//    @Autowired
+//    private AdminService service;
+//
+//    @RequestMapping("login")
+//    public Admin page1(Admin admin) {
+//        return service.findByNameAndPassword(admin);
+//    }
+    
 }

@@ -1,11 +1,8 @@
-package com.moxi.entity;
+package com.moxi.utils;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-//import com.github.miemiedev.mybatis.paginator.domain.PageList;
-//import com.github.miemiedev.mybatis.paginator.domain.Paginator;
 
 public class SimpleListObject<T> extends SimpleNetObject {
 	
