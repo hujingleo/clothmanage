@@ -21,6 +21,10 @@
     from user
 LIMIT #{offset},#{limit}
   </select>
+   <select id="countTotal" resultType="int">
+    select count(1)
+    from user
+  </select>
 
   <insert id="insert" parameterType="com.moxi.model.User">
     insert into user (name)

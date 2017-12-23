@@ -17,4 +17,5 @@ public interface UserDao {
     void insert(User user) throws SQLException;
     
     List<User> getusers(@Param("offset") int offset, @Param("limit") int limit);
+    int countTotal();
 }

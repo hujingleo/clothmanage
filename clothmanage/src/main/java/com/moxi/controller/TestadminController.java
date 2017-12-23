@@ -73,10 +73,11 @@ public class TestadminController {
     		startat = (page-1)*limit;
 		}
     	List<User> userlist = userService.getuserlist(startat, limit);
-
+    	int total = userService.countTotal();
         	slo.setRows(userlist);
         	slo.setPage(page);
         	slo.setLimit(limit);
+        	slo.setTotal(total);
         return slo;
     }
 }
