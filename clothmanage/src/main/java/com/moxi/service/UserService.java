@@ -18,4 +18,5 @@ public interface UserService {
     void insert(User user) throws SQLException;
 
     void insertList(List<User> userList) throws SQLException;
+    List<User> getuserlist(int startat , int limit) ;
 }

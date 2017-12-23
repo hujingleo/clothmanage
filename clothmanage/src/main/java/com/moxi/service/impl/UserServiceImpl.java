@@ -43,4 +43,10 @@ public class UserServiceImpl implements UserService {
         int i = 1/0;
         insert(userList.get(1));
     }
+
+	@Override
+	public List<User> getuserlist(int startat, int limit) {
+		// TODO Auto-generated method stub
+		return userDao.getusers(startat,limit);
+	}
 }

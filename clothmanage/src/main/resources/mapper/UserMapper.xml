@@ -15,6 +15,12 @@
     from user
     where id = #{id,jdbcType=INTEGER}
   </select>
+    <select id="getusers" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+LIMIT #{offset},#{limit}
+  </select>
 
   <insert id="insert" parameterType="com.moxi.model.User">
     insert into user (name)

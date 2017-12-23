@@ -30,12 +30,7 @@ public class AdminController {
         }
         return user;
     }
-    @RequestMapping("/testinsert")
-    public User testinsert(){
-        User user =null;
 
-        return user;
-    }
 
 //  @Autowired
 //  private AdminService service;
