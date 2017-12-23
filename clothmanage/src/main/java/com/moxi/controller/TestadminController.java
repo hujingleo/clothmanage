@@ -1,7 +1,5 @@
 package com.moxi.controller;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,8 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.moxi.model.User;
 import com.moxi.service.UserService;
 import com.moxi.utils.SimpleListObject;
-import com.moxi.utils.SimpleNetObject;
-import com.mysql.fabric.xmlrpc.base.Array;
 
 @RestController
 @RequestMapping("/admin")
