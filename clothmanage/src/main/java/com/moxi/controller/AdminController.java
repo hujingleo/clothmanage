@@ -33,11 +33,7 @@ public class AdminController {
     @RequestMapping("/testinsert")
     public User testinsert(){
         User user =null;
-        try {
-            user = userService.findById(1);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
         return user;
     }
 
