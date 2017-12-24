@@ -495,9 +495,9 @@ public class StringTool {
         
     } 
 	
-	public static void main(String[] args) {
-		System.out.println(getIntervalTimeMaoHao(1000*60*60*25));
-	}
+//	public static void main(String[] args) {
+//		System.out.println(getIntervalTimeMaoHao(1000*60*60*25));
+//	}
 
 
 

@@ -5,6 +5,8 @@ package com.moxi.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.ServletOutputStream;
+
 import com.moxi.model.User;
 
 /**
@@ -21,5 +23,7 @@ public interface UserService {
     List<User> getuserlist(int startat , int limit) ;
     int countTotal() ;
     String exportCurrenPage2xls(int startat , int limit);
+        public void export(String[] titles, ServletOutputStream out);
+
     
 }
