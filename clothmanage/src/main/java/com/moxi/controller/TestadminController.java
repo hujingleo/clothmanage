@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.moxi.model.Tomcatlog;
 import com.moxi.model.User;
+import com.moxi.service.TomcatlogService;
 import com.moxi.service.UserService;
 import com.moxi.utils.SimpleListObject;
 
@@ -21,6 +23,8 @@ import com.moxi.utils.SimpleListObject;
 public class TestadminController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private TomcatlogService tomcatlogService;
 	@Value("${export.weblocation}")
 	private String exportWebRoot;
 	@RequestMapping("index")
@@ -29,13 +33,15 @@ public class TestadminController {
 	}
 
 	@RequestMapping("map")
-	public Map<String, String> map1() {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("name", "老张");
-		map.put("age", "24");
-		map.put("sex", "男");
-		map.put("feature", "青春痘很多");
-		map.put("dream", "没梦想啊");
+	public Map<String, List<Tomcatlog>> map1() {
+		Map<String, List<Tomcatlog>> map = new HashMap<String, List<Tomcatlog>>();
+//		map.put("name", "老张");
+//		map.put("age", "24");
+//		map.put("sex", "男");
+//		map.put("feature", "青春痘很多");
+//		map.put("dream", "没梦想啊");
+		List<Tomcatlog> list = tomcatlogService.testget();
+		map.put("list", list);
 		return map;
 	}
 //    @RequestMapping("/testinsert")
